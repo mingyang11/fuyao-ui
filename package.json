@@ -9,6 +9,14 @@
   "keywords": [
     "前端组件库"
   ],
-  "author": "yangyangmy",
+  "author": "fuyao",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mingyang11/fuyao-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mingyang11/fuyao-ui/issues"
+  },
+  "homepage": "https://github.com/mingyang11/fuyao-ui#readme",
   "license": "ISC"
 }
