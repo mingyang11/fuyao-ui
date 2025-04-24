@@ -1,1 +1,8 @@
 node_modules
+
+.dumi
+.DS_Store
+.idea
+.vscode
+.yarn
+.yarnrc
