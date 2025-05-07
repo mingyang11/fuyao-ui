@@ -1,6 +1,5 @@
 import classNames from 'classnames';
 import React, { HTMLAttributes, useMemo } from 'react';
-import classnames from 'classnames';
 
 const EmptyImgMaps = {
   '404页面': '404',
@@ -71,7 +70,7 @@ const FuyaoEmpty: React.FC<FuyaoEmptyProps> = (props) => {
   const img = type && EmptyImgMaps[type];
 
   return (
-    <div className={classnames('fuyao-empty', className)} style={style}>
+    <div className={classNames('fuyao-empty', className)} style={style}>
       {img ? (
         <div
           style={imageStyle}
@@ -84,7 +83,7 @@ const FuyaoEmpty: React.FC<FuyaoEmptyProps> = (props) => {
         <div className="fuyao-empty-img" style={imgStyle} />
       )}
       <div
-        className={classnames(
+        className={classNames(
           'fuyao-empty-desc',
           isNoPaddingButton(type) && ' no-padding',
           type === '审核中' && 'type-audit',

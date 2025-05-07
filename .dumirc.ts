@@ -36,6 +36,15 @@ export default defineConfig({
         // },
       ],
     },
+    // 配置 toc 目录
+    toc: {
+      // 是否显示目录
+      show: true,
+      // 目录层级
+      level: 3,
+      // 目录标题
+      title: '目录',
+    },
   },
   // 使用约定式路由
   resolve: {
@@ -43,5 +52,24 @@ export default defineConfig({
     atomDirs: [{ type: 'component', dir: 'src/components' }],
     // 组件文档目录
     docDirs: ['docs'],
+  },
+  // 配置主题
+  theme: {
+    '@c-primary': '#1890ff',
+    '@c-success': '#52c41a',
+    '@c-warning': '#faad14',
+    '@c-error': '#f5222d',
+    '@c-heading': '#0d1a26',
+    '@c-text': '#314659',
+    '@c-text-secondary': '#697b8c',
+    '@c-border': '#ebedf0',
+    '@c-site-bg': '#f5f8fa',
+    '@c-bg': '#fff',
+    '@c-bg-light': '#fafafa',
+    '@c-bg-lighter': '#f5f5f5',
+    '@c-bg-lightest': '#fafafa',
+    '@c-bg-dark': '#f0f2f5',
+    '@c-bg-darker': '#e6e6e6',
+    '@c-bg-darkest': '#d9d9d9',
   },
 });
