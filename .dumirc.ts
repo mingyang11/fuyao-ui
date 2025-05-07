@@ -7,35 +7,40 @@ export default defineConfig({
   themeConfig: {
     // 导航栏配置
     nav: [
-      { title: '指南', link: '/guide' },
-      { title: '组件', link: '/components' },
+      { title: '指南', link: '/guide/log' },
+      { title: '组件', link: '/components/fuyao-button' },
     ],
     // 侧边栏配置
     sidebar: {
+      '/guide': [
+        {
+          title: '指南',
+          children: [
+            { title: '更新日志', link: '/guide/log' },
+            { title: '快速开始', link: '/guide/quickstart' },
+          ],
+        },
+      ],
       // 组件页面的侧边栏
       '/components': [
         {
           title: '通用',
           children: [
-            { title: 'Button 按钮', link: '/components/button' },
-            // 其他通用组件...
+            { title: 'FuyaoButton', link: '/components/fuyao-button' },
+            { title: 'FuyaoEmpty', link: '/components/fuyao-empty' },
           ],
         },
-        {
-          title: '布局',
-          children: [
-            { title: 'Space 间距', link: '/components/space' },
-            // 其他布局组件...
-          ],
-        },
-        // 其他组件分组...
+        // {
+        //   title: '布局',
+        //   children: [{ title: 'Space 间距', link: '/components/space' }],
+        // },
       ],
     },
   },
   // 使用约定式路由
   resolve: {
     // 配置组件库文档目录解析规则
-    atomDirs: [{ type: 'component', dir: 'src' }],
+    atomDirs: [{ type: 'component', dir: 'src/components' }],
     // 组件文档目录
     docDirs: ['docs'],
   },
