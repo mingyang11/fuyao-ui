@@ -1,3 +1,3 @@
 import Button from './Button';
-
-export { Button };
+import FuyaoEmpty from './FuyaoEmpty';
+export { Button, FuyaoEmpty };

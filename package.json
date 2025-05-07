@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "antd": "^5.24.8",
+    "classnames": "^2.5.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "typescript": "^5.8.3"
