@@ -6,6 +6,7 @@ nav:
 group:
   title: 通用
   order: 2
+toc: content
 ---
 
 # Empty 空状态

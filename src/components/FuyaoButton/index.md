@@ -6,6 +6,8 @@ nav:
 group:
   title: 通用
   order: 1
+
+toc: content
 ---
 
 # Button 按钮
