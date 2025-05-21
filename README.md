@@ -1,6 +1,63 @@
 # Fuyao UI 组件库
 
-Fuyao UI 是一个基于 React 的轻量级组件库，提供了常用的 UI 组件。
+Fuyao UI 是一个基于 Antd 的 React 组件库，提供了一系列易用的UI组件。
+
+## 已重构组件
+
+以下组件已经从 componentsRebase 中重构到 components 中：
+
+1. **FuyaoButton**: 按钮组件，支持权限控制和防抖功能
+2. **FuyaoEmpty**: 空状态组件，支持多种空状态展示
+3. **FuyaoIcon**: 图标组件，基于 Antd Icon
+4. **FuyaoMaskLoading**: 全局遮罩加载组件
+5. **FuyaoCondition**: 条件组合组件，用于构建复杂查询条件
+6. **FuyaoInput**: 输入框组件，包含Input、TextArea和其他变体
+7. **FuyaoSelect**: 选择器组件，支持全选功能
+
+## 重构规则
+
+重构过程遵循以下规则：
+
+1. 只重构了以Serv开头的组件
+2. 使用函数式组件写法
+3. 将"serv"开头的命名替换为"fuyao"
+4. 将公共方法提取到utils目录
+
+## 工具函数
+
+重构过程中创建了以下工具函数：
+
+- `classnames`: 类名工具函数，用于合并多个className
+- `types`: 类型判断工具，包含isPlainObject、isFunction等函数
+- `useObjectState`: 对象状态管理钩子
+
+## 使用方法
+
+```jsx
+import {
+  FuyaoButton,
+  FuyaoEmpty,
+  FuyaoIcon,
+  FuyaoInput,
+  FuyaoMaskLoading,
+  FuyaoSelect
+} from './components';
+
+// 使用按钮
+<FuyaoButton type="primary">按钮</FuyaoButton>
+
+// 使用空状态
+<FuyaoEmpty type="暂无内容" />
+
+// 使用选择器
+<FuyaoSelect
+  options={[
+    { label: '选项1', value: 1 },
+    { label: '选项2', value: 2 }
+  ]}
+  showSelectAll
+/>
+```
 
 ## 安装
 

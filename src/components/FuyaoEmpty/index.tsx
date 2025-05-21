@@ -1,5 +1,32 @@
 import classNames from 'classnames';
 import React, { HTMLAttributes, useMemo } from 'react';
+// 引入所有图片
+import img404 from './imgs/404.png';
+import imgError from './imgs/error.png';
+import imgGn from './imgs/gn.png';
+import imgHt from './imgs/ht.png';
+import imgHsqk from './imgs/hsqk.png';
+import imgJzsb from './imgs/jzsb.png';
+import imgJqqd from './imgs/jqqd.png';
+import imgYhk from './imgs/yhk.png';
+import imgMrtx from './imgs/mrtx.png';
+import imgPj from './imgs/pj.png';
+import imgQxbz from './imgs/qxbz.png';
+import imgRw from './imgs/rw.png';
+import imgShwc from './imgs/shwc.png';
+import imgShz from './imgs/shz.png';
+import imgSj from './imgs/sj.png';
+import imgSswk from './imgs/sswk.png';
+import imgNrwk from './imgs/nrwk.png';
+import imgWl from './imgs/wl.png';
+import imgHm from './imgs/hm.png';
+import imgQy from './imgs/qy.png';
+import imgXtwh from './imgs/xtwh.png';
+import imgYfz from './imgs/yfz.png';
+import imgZwnr from './imgs/zwnr.png';
+import imgZwxx from './imgs/zwxx.png';
+import imgZt from './imgs/zt.png';
+import imgXx from './imgs/xx.png';
 
 const EmptyImgMaps = {
   '404页面': '404',
@@ -30,6 +57,36 @@ const EmptyImgMaps = {
   XX加载失败: 'xx',
 };
 
+// 图片映射对象
+const ImgSrcMaps: Record<string, string> = {
+  '404': img404,
+  error: imgError,
+  gn: imgGn,
+  ht: imgHt,
+  hsqk: imgHsqk,
+  jzsb: imgJzsb,
+  jqqd: imgJqqd,
+  yhk: imgYhk,
+  mrtx: imgMrtx,
+  pj: imgPj,
+  qxbz: imgQxbz,
+  rw: imgRw,
+  shwc: imgShwc,
+  shz: imgShz,
+  sj: imgSj,
+  sswk: imgSswk,
+  nrwk: imgNrwk,
+  wl: imgWl,
+  hm: imgHm,
+  qy: imgQy,
+  xtwh: imgXtwh,
+  yfz: imgYfz,
+  zwnr: imgZwnr,
+  zwxx: imgZwxx,
+  zt: imgZt,
+  xx: imgXx,
+};
+
 export type EmptyType = keyof typeof EmptyImgMaps;
 
 const isNoPaddingButton = (type?: any) =>
@@ -43,7 +100,7 @@ const isNoPaddingButton = (type?: any) =>
     '未绑定电话号码',
   ].includes(type);
 
-type FuyaoEmptyProps = {
+interface FuyaoEmptyProps extends HTMLAttributes<HTMLDivElement> {
   /**
    * 缺省类型
    */
@@ -52,13 +109,25 @@ type FuyaoEmptyProps = {
    * 缺省描述，默认和『缺省类型』相同
    */
   description?: string;
+  /**
+   * 自定义图片URL
+   */
   image?: string;
+  /**
+   * 图片样式
+   */
   imageStyle?: React.CSSProperties;
-} & HTMLAttributes<any>;
+}
 
-const FuyaoEmpty: React.FC<FuyaoEmptyProps> = (props) => {
-  const { type, description, className, style, image, imageStyle } = props;
-
+const FuyaoEmpty = ({
+  type = '数据',
+  description,
+  className,
+  style,
+  image,
+  imageStyle,
+  ...rest
+}: FuyaoEmptyProps) => {
   const imgStyle = useMemo(
     () => ({
       backgroundImage: `url(${image})`,
@@ -70,7 +139,11 @@ const FuyaoEmpty: React.FC<FuyaoEmptyProps> = (props) => {
   const img = type && EmptyImgMaps[type];
 
   return (
-    <div className={classNames('fuyao-empty', className)} style={style}>
+    <div
+      className={classNames('fuyao-empty', className)}
+      style={style}
+      {...rest}
+    >
       {img ? (
         <div
           style={imageStyle}

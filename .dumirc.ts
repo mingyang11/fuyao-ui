@@ -28,6 +28,8 @@ export default defineConfig({
           children: [
             { title: 'FuyaoButton', link: '/components/fuyao-button' },
             { title: 'FuyaoEmpty', link: '/components/fuyao-empty' },
+            { title: 'FuyaoBlockTitle', link: '/components/fuyao-block-title' },
+            { title: 'FuyaoRangeInput', link: '/components/fuyao-range-input' },
           ],
         },
         // {
@@ -49,7 +51,10 @@ export default defineConfig({
   // 使用约定式路由
   resolve: {
     // 配置组件库文档目录解析规则
-    atomDirs: [{ type: 'component', dir: 'src/components' }],
+    atomDirs: [
+      { type: 'component', dir: 'src/components' },
+      { type: 'doc', dir: 'src/components' },
+    ],
     // 组件文档目录
     docDirs: ['docs'],
   },

@@ -43,9 +43,17 @@ module.exports = {
       'process.env.NODE_ENV': '"production"',
     }),
     postcss({
-      // 为true或者有值时css会被打包到单独的文件中，否则会被打包到js文件中
       extract: 'index.css',
-      //   plugins: [require('autoprefixer')],
+      extensions: ['.css', '.less'],
+      use: [
+        [
+          'less',
+          {
+            javascriptEnabled: true,
+          },
+        ],
+      ],
+      plugins: [require('autoprefixer')],
     }),
     // myExtractCssRollupPlugin({
     //   filename: 'fuyao.css',

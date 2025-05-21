@@ -20,8 +20,10 @@ toc: content
 ```jsx
 import { FuyaoEmpty } from 'fuyao-ui';
 
-export default () => <FuyaoEmpty type="数据" />;
+export default () => <FuyaoEmpty type="功能" />;
 ```
+
+<code src="./demos/basic.tsx" title="基础用法" desc="基础按钮用法。"></code>
 
 ### 自定义描述
 

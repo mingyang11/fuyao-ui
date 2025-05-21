@@ -16,17 +16,13 @@ toc: content
 
 ## 代码演示
 
-<code src="./demos/basic.tsx" title="基础用法" desc="基础按钮用法。"></code>
-
-<code src="./demos/size.tsx" title="按钮尺寸" desc="按钮有大、中、小三种尺寸。"></code>
-
 ```jsx
 import React from 'react';
 import { FuyaoButton } from 'fuyao-ui';
 
 export default () => (
   <div>
-    <FuyaoButton type="primary">Primary Button</FuyaoButton>
+    <FuyaoButton type="dashed">Primary Button</FuyaoButton>
     <FuyaoButton>Default Button</FuyaoButton>
   </div>
 );
