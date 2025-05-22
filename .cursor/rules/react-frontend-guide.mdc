@@ -1,0 +1,27 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# React前端开发指南
+
+## 项目架构
+本项目是一个React前端组件库，使用TypeScript开发，通过Rollup构建，采用Less进行样式管理。
+
+## 目录结构规范
+- `/src`: 源代码目录
+  - `/components`: 组件目录
+  - `/hooks`: 自定义React Hooks
+  - `/utils`: 工具函数
+  - `/styles`: 全局样式和变量
+  - `/types`: TypeScript类型定义
+
+## 组件开发规范
+每个组件应有独立文件夹，包含主实现文件、样式文件、类型定义和测试。
+- 使用函数式组件和React Hooks
+- 使用TypeScript定义类型
+- 组件样式模块化，避免全局污染
+
+## 构建与发布
+- 使用Rollup打包，生成ES模块和CommonJS格式
+- 遵循语义化版本控制
