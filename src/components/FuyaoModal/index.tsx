@@ -1,43 +1,9 @@
 import { Modal } from 'antd';
 import type { ModalProps } from 'antd/es/modal';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { FuyaoModalInstance } from '../../hooks';
 import { classnames } from '../../utils';
 import './index.less';
-
-/**
- * Modal实例接口
- * @example
- * ```tsx
- * const modal = useModal();
- *
- * // 打开弹窗
- * modal.setInstance({
- *   open: (arg) => {
- *     console.log('打开弹窗', arg);
- *   },
- *   close: (type) => {
- *     console.log('关闭弹窗', type);
- *   },
- *   trigger: (type) => {
- *     console.log('触发操作', type);
- *   },
- * });
- * ```
- */
-export interface FuyaoModalInstance {
-  /**
-   * 弹窗是否打开
-   */
-  opened: boolean;
-  /**
-   * 设置弹窗实例
-   */
-  setInstance: (instance: {
-    open: (arg?: any) => void;
-    close: (type?: 'cancel' | 'ok') => void;
-    trigger: (type: 'ok' | 'cancel') => void;
-  }) => void;
-}
 
 export interface FuyaoModalProps
   extends Omit<ModalProps, 'visible' | 'onCancel' | 'onClose'> {
@@ -82,32 +48,6 @@ export interface FuyaoModalProps
   showConfirmLoading?: boolean;
 }
 
-/**
- * 富耀弹窗组件
- * @example
- * ```tsx
- * const Demo = () => {
- *   const modal = useModal();
- *
- *   return (
- *     <>
- *       <Button onClick={() => modal.setInstance({ open: () => {} })}>
- *         打开弹窗
- *       </Button>
- *       <FuyaoModal
- *         modal={modal}
- *         title="标题"
- *         onOk={() => {
- *           console.log('确认');
- *         }}
- *       >
- *         内容
- *       </FuyaoModal>
- *     </>
- *   );
- * };
- * ```
- */
 const FuyaoModal: React.FC<FuyaoModalProps> = ({
   modal,
   defaultVisible = false,

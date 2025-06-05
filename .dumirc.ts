@@ -27,7 +27,7 @@ export default defineConfig({
           title: '通用',
           children: [
             { title: 'FuyaoButton', link: '/components/fuyao-button' },
-            { title: 'FuyaoEmpty', link: '/components/fuyao-empty' },
+            { title: 'FuyaoModal', link: '/components/fuyao-modal' },
             { title: 'FuyaoBlockTitle', link: '/components/fuyao-block-title' },
             { title: 'FuyaoRangeInput', link: '/components/fuyao-range-input' },
           ],
